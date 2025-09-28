@@ -317,13 +317,13 @@ void led_test_task(void *arg)
         ESP_LOGI(TAG, "=== LED test round %lu ===", test_counter / state_count + 1);
         ESP_LOGI(TAG, "Current test state: %s (%d)", state_names[test_counter % state_count], current_state);
         // 设置所有LED为相同状态进行测试
-       setLed_State(&gBatLED,9);
-        //setLed_State(&gInverterLED, current_state);
-      //  setLed_State(&gChargeLED, current_state);
-       // setLed_State(&gGridLED, current_state);
-        //setLed_State(&gPvLED, current_state);
-        //setLed_State(&gNetLED, current_state);
-        //setLed_State(&gRunLED, current_state);
+        setLed_State(&gBatLED,9);
+        setLed_State(&gInverterLED, current_state);
+        setLed_State(&gChargeLED, current_state);
+        setLed_State(&gGridLED, current_state);
+        setLed_State(&gPvLED, current_state);
+        setLed_State(&gNetLED, current_state);
+        setLed_State(&gRunLED, current_state);
         // 显示系统状态
         if (test_counter % state_count == 0) {
             ESP_LOGI(TAG, "System running normally - Free heap: %d bytes", xPortGetFreeHeapSize());
